@@ -1,0 +1,300 @@
+/* 全局样式重置与基础配置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 主题色配置 */
+    --primary-color: #165DFF;
+    --secondary-color: #6B7280;
+    --success-color: #00B42A;
+    --danger-color: #F53F3F;
+    --warning-color: #FF7D00;
+    --info-color: #86909C;
+    --light-color: #F9FAFB;
+    --dark-color: #1D2129;
+    --bg-color: #F2F3F5;
+    --card-bg: #FFFFFF;
+    --border-color: #E5E6EB;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    
+    /* 字体配置 */
+    --font-main: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 24px;
+    
+    /* 间距配置 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* 圆角配置 */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* 过渡配置 */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* 基础样式 */
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-size-md);
+    color: var(--dark-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    padding-top: var(--spacing-xl);
+}
+
+/* 容器样式 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+/* 标题样式 */
+h2, h5 {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: var(--radius-sm);
+}
+
+h5 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* 按钮样式增强 */
+.btn {
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-md);
+    padding: 8px 16px;
+    transition: all var(--transition-normal);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0E4BD8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 93, 255, 0.3);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.task-btn {
+    margin-right: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 表单控件样式 */
+.form-label {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    color: var(--dark-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: var(--font-size-md);
+    transition: all var(--transition-fast);
+    resize: none;
+    min-height: 100px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.1);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: var(--info-color);
+    font-size: var(--font-size-sm);
+}
+
+/* 结果展示区样式 */
+.result-card {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+}
+
+.result-content {
+    min-height: 150px;
+    padding: var(--spacing-md);
+    background-color: var(--card-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    white-space: pre-wrap;
+    line-height: 1.8;
+    color: var(--dark-color);
+    font-size: var(--font-size-md);
+}
+
+/* 徽章样式增强 */
+.badge {
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.badge.bg-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.badge.bg-info {
+    background-color: var(--info-color);
+    color: white;
+}
+
+/* 加载动画样式 */
+.loading {
+    color: var(--primary-color);
+    margin-top: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-md);
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+    margin-right: var(--spacing-xs);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    :root {
+        --font-size-xxl: 20px;
+        --font-size-xl: 16px;
+        --spacing-lg: 20px;
+        --spacing-xl: 24px;
+    }
+    
+    .container {
+        margin: 0 var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    
+    .task-btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .btn.ms-2 {
+        margin-left: 0 !important;
+    }
+}
+
+/* 交互效果 */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* 隐藏元素 */
+.d-none {
+    display: none !important;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
